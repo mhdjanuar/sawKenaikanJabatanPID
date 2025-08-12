@@ -34,8 +34,8 @@
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL"/>
 		<queryString language="SQL">
-			<![CDATA[select * from  saw_karyawan_dankos_farma.sub_criteria as sc 
-inner join saw_karyawan_dankos_farma.criteria as c on sc.id_kreteria = c.id]]>
+			<![CDATA[select * from  saw_kenaikan_jabatan_pid.sub_criteria as sc 
+inner join saw_kenaikan_jabatan_pid.criteria as c on sc.id_kreteria = c.id]]>
 		</queryString>
 		<field name="id" class="java.lang.Integer">
 			<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -80,7 +80,7 @@ inner join saw_karyawan_dankos_farma.criteria as c on sc.id_kreteria = c.id]]>
 	</subDataset>
 	<parameter name="PATH" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[select * from  saw_karyawan_dankos_farma.sub_criteria limit 1]]>
+		<![CDATA[select * from  saw_kenaikan_jabatan_pid.sub_criteria limit 1]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -108,7 +108,7 @@ inner join saw_karyawan_dankos_farma.criteria as c on sc.id_kreteria = c.id]]>
 	<pageHeader>
 		<band height="80" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="-30" width="595" height="110" forecolor="#FFFCFC" backcolor="#FFFFFF" uuid="e5469d4a-884f-408d-93d0-9ba247d08d00"/>
+				<reportElement mode="Opaque" x="-20" y="-30" width="595" height="110" forecolor="#FFFCFC" backcolor="#FFFFFF" uuid="8614d487-da76-43bf-a37d-a0c7d8e4b983"/>
 				<box padding="0">
 					<pen lineColor="#000000"/>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -117,27 +117,23 @@ inner join saw_karyawan_dankos_farma.criteria as c on sc.id_kreteria = c.id]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement x="100" y="21" width="420" height="30" forecolor="#000000" uuid="72687c4d-8ad6-404b-a5c2-1f221581a41b"/>
+					<reportElement x="100" y="30" width="420" height="30" forecolor="#000000" uuid="6daf5aa3-6e90-4aab-aaca-ffac3ce923a5"/>
 					<textElement textAlignment="Center">
 						<font fontName="Times New Roman" size="20" isBold="true"/>
 						<paragraph lineSpacingSize="1.0"/>
 					</textElement>
-					<text><![CDATA[Dankos Forma]]></text>
+					<text><![CDATA[PT.Pelita Indonesia Djaya]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="110" y="52" width="421" height="20" forecolor="#000000" uuid="8c2df675-acf0-4f7e-acb8-fd0a74022e53"/>
+					<reportElement x="100" y="61" width="454" height="20" forecolor="#000000" uuid="032d289b-bd98-4bc9-91e9-e8c4f05b6c90"/>
 					<textElement>
 						<font fontName="Times New Roman"/>
 					</textElement>
-					<text><![CDATA[Kw. Industri Pulogadung, Jl. Rawagatel No.35-40 Blok III-S, RT.10/RW.9, Jatinegara, Kec. Cakung]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="170" y="76" width="281" height="20" forecolor="#000000" uuid="2b0f7ace-978d-4119-b65d-be0a291b523d"/>
-					<text><![CDATA[Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13930]]></text>
+					<text><![CDATA[Gedung PELNI Kemayoran ( Lantai 2 ) Jl. Angkasa No. 18 Gn. Sahari Selatan Kec. Kemayoran Jakarta Pusat]]></text>
 				</staticText>
 				<image>
 					<reportElement x="40" y="35" width="50" height="50" uuid="7d8173cf-db76-4b80-b00f-514678a5c8bc"/>
-					<imageExpression><![CDATA[$P{PATH}+"dankos-200.png"]]></imageExpression>
+					<imageExpression><![CDATA[$P{PATH}+"pelni-200.png"]]></imageExpression>
 				</image>
 			</frame>
 		</band>

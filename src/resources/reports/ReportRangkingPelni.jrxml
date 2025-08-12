@@ -155,8 +155,8 @@ ORDER BY total_nilai DESC;]]>
 					<text><![CDATA[Gedung PELNI Kemayoran ( Lantai 2 ) Jl. Angkasa No. 18 Gn. Sahari Selatan Kec. Kemayoran Jakarta Pusat]]></text>
 				</staticText>
 				<image>
-					<reportElement x="40" y="25" width="50" height="50" uuid="6beea35d-c040-4eb0-84e3-b5b19ff7e706"/>
-					<imageExpression><![CDATA["invoice_logo.png"]]></imageExpression>
+					<reportElement x="40" y="35" width="50" height="50" uuid="7d8173cf-db76-4b80-b00f-514678a5c8bc"/>
+					<imageExpression><![CDATA[$P{PATH}+"pelni-200.png"]]></imageExpression>
 				</image>
 			</frame>
 		</band>

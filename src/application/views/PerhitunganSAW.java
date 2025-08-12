@@ -51,7 +51,7 @@ public class PerhitunganSAW extends javax.swing.JFrame {
 
         // Buat model tabel dengan kolom: Nama Pelanggan, Nama Kriteria, Nilai Normalisasi
         DefaultTableModel model = new DefaultTableModel();
-        model.setColumnIdentifiers(new Object[]{"Nama Peserta", "Nama Kriteria", "Nilai Normalisasi"});
+        model.setColumnIdentifiers(new Object[]{"Nama Karyawan", "Nama Kriteria", "Nilai Normalisasi"});
 
         // Isi tabel dengan data
         for (AlternatifModel alternatif : normalisasiList) {
@@ -386,7 +386,7 @@ public class PerhitunganSAW extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
          try {
-            String templateName = "ReportRangkingDankos.jrxml";
+            String templateName = "ReportRangkingPelni.jrxml";
             InputStream reportStream = ReportView.class.getResourceAsStream("/resources/reports/" + templateName);
             JasperDesign jd = JRXmlLoader.load(reportStream);
 
