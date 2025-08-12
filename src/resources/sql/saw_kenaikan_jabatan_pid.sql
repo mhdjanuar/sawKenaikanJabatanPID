@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2025 at 03:56 PM
+-- Generation Time: Aug 12, 2025 at 07:40 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `saw_karyawan_dankos_farma`
+-- Database: `saw_kenaikan_jabatan_pid`
 --
 
 -- --------------------------------------------------------
@@ -38,14 +38,16 @@ CREATE TABLE `alternatif` (
 --
 
 INSERT INTO `alternatif` (`id`, `id_employee`, `id_sub_kreteria`) VALUES
-(21, 1, 4),
-(22, 1, 7),
-(23, 1, 11),
-(24, 1, 15),
-(25, 4, 3),
-(26, 4, 8),
-(27, 4, 10),
-(28, 4, 15);
+(29, 1, 1),
+(30, 1, 6),
+(31, 1, 11),
+(32, 1, 16),
+(33, 1, 21),
+(34, 4, 2),
+(35, 4, 9),
+(36, 4, 12),
+(37, 4, 18),
+(38, 4, 23);
 
 -- --------------------------------------------------------
 
@@ -65,10 +67,11 @@ CREATE TABLE `criteria` (
 --
 
 INSERT INTO `criteria` (`id`, `nama`, `type`, `bobot`) VALUES
-(1, 'Absensi', 'benefit', 25.00),
-(2, 'Disiplin', 'benefit', 25.00),
-(3, 'Ketepatan Waktu Pekerjaan', 'benefit', 25.00),
-(4, 'Kerjasama', 'benefit', 25.00);
+(1, 'Pengalaman Kerja', 'benefit', 0.25),
+(2, 'Kedisiplinan', 'benefit', 0.20),
+(3, 'Kinerja', 'benefit', 0.30),
+(4, 'Pendidikan Terakhir', 'benefit', 0.15),
+(5, 'Kepemimpinan', 'benefit', 0.10);
 
 -- --------------------------------------------------------
 
@@ -110,22 +113,31 @@ CREATE TABLE `sub_criteria` (
 --
 
 INSERT INTO `sub_criteria` (`id`, `id_kreteria`, `jumlah_bobot`, `deskripsi`) VALUES
-(1, 1, 1.00, 'Absen > 4 hari dalam sebulan'),
-(2, 1, 2.00, 'Absen 3–4 hari dalam sebulan'),
-(3, 1, 3.00, 'Absen 1–2 hari dalam sebulan'),
-(4, 1, 4.00, 'Tidak pernah absen (0 hari dalam sebulan)'),
-(5, 2, 1.00, 'Sering melanggar peraturan kerja'),
-(6, 2, 2.00, 'Sering datang terlambat'),
-(7, 2, 3.00, 'Kadang datang terlambat, masih mematuhi aturan'),
-(8, 2, 4.00, 'Selalu datang tepat waktu, patuh pada aturan'),
-(9, 3, 1.00, 'Tidak menyelesaikan tugas atau sering lalai'),
-(10, 3, 2.00, 'Sering menunda tugas atau butuh pengawasan'),
-(11, 3, 3.00, 'Menyelesaikan tugas dengan sedikit keterlambatan'),
-(12, 3, 4.00, 'Selalu menyelesaikan tugas tepat waktu dan sesuai target'),
-(13, 4, 1.00, 'Kurang (sulit diajak bekerja sama)'),
-(14, 4, 2.00, 'Cukup (terkadang pasif)'),
-(15, 4, 3.00, 'Baik (komunikasi lancar dengan rekan kerja)'),
-(16, 4, 4.00, 'Sangat baik (aktif berkomunikasi & kooperatif)');
+(1, 1, 5.00, '≥ 10 tahun'),
+(2, 1, 4.00, '7–9 tahun'),
+(3, 1, 3.00, '4–6 tahun'),
+(4, 1, 2.00, '1–3 tahun'),
+(5, 1, 1.00, '< 1 tahun'),
+(6, 2, 5.00, 'Tidak pernah terlambat'),
+(7, 2, 4.00, 'Terlambat ≤ 2 kali/bulan'),
+(8, 2, 3.00, 'Terlambat 3–4 kali/bulan'),
+(9, 2, 2.00, 'Terlambat 5–6 kali/bulan'),
+(10, 2, 1.00, 'Terlambat > 6 kali/bulan'),
+(11, 3, 5.00, 'Nilai kinerja ≥ 90'),
+(12, 3, 4.00, 'Nilai kinerja 80–89'),
+(13, 3, 3.00, 'Nilai kinerja 70–79'),
+(14, 3, 2.00, 'Nilai kinerja 60–69'),
+(15, 3, 1.00, 'Nilai kinerja < 60'),
+(16, 4, 5.00, 'S2 atau lebih'),
+(17, 4, 4.00, 'S1'),
+(18, 4, 3.00, 'D3'),
+(19, 4, 2.00, 'SMA/SMK'),
+(20, 4, 1.00, 'SMP atau lebih rendah'),
+(21, 5, 5.00, 'Sangat baik'),
+(22, 5, 4.00, 'Baik'),
+(23, 5, 3.00, 'Cukup'),
+(24, 5, 2.00, 'Kurang'),
+(25, 5, 1.00, 'Sangat kurang');
 
 -- --------------------------------------------------------
 
@@ -196,13 +208,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `alternatif`
 --
 ALTER TABLE `alternatif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `criteria`
 --
 ALTER TABLE `criteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `employees`
@@ -214,7 +226,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `sub_criteria`
 --
 ALTER TABLE `sub_criteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `users`
