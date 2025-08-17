@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2025 at 07:40 PM
+-- Generation Time: Aug 17, 2025 at 10:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,12 +42,10 @@ INSERT INTO `alternatif` (`id`, `id_employee`, `id_sub_kreteria`) VALUES
 (30, 1, 6),
 (31, 1, 11),
 (32, 1, 16),
-(33, 1, 21),
 (34, 4, 2),
 (35, 4, 9),
 (36, 4, 12),
-(37, 4, 18),
-(38, 4, 23);
+(37, 4, 18);
 
 -- --------------------------------------------------------
 
@@ -67,11 +65,10 @@ CREATE TABLE `criteria` (
 --
 
 INSERT INTO `criteria` (`id`, `nama`, `type`, `bobot`) VALUES
-(1, 'Pengalaman Kerja', 'benefit', 0.25),
-(2, 'Kedisiplinan', 'benefit', 0.20),
-(3, 'Kinerja', 'benefit', 0.30),
-(4, 'Pendidikan Terakhir', 'benefit', 0.15),
-(5, 'Kepemimpinan', 'benefit', 0.10);
+(1, 'Problem soving', 'benefit', 35.00),
+(2, 'Kedisiplinan', 'benefit', 20.00),
+(3, 'Masa Kerja', 'benefit', 30.00),
+(4, 'Kerjasama Tim', 'benefit', 15.00);
 
 -- --------------------------------------------------------
 
@@ -90,10 +87,10 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`id`, `name`, `position`) VALUES
-(1, 'Muhammad Januar', 'Developer'),
+(1, 'Muhammad Januar', 'Supervisor'),
 (4, 'Helmy Akbar', 'Staff'),
-(5, 'Tanneke Iqbal', 'Head Office'),
-(6, 'Galang Wijaya Ubah', 'HRD Ubah');
+(5, 'Tanneke Iqbal', 'Manager'),
+(6, 'Galang Wijaya Ubah', 'General manager');
 
 -- --------------------------------------------------------
 
@@ -113,31 +110,26 @@ CREATE TABLE `sub_criteria` (
 --
 
 INSERT INTO `sub_criteria` (`id`, `id_kreteria`, `jumlah_bobot`, `deskripsi`) VALUES
-(1, 1, 5.00, '≥ 10 tahun'),
-(2, 1, 4.00, '7–9 tahun'),
-(3, 1, 3.00, '4–6 tahun'),
-(4, 1, 2.00, '1–3 tahun'),
-(5, 1, 1.00, '< 1 tahun'),
-(6, 2, 5.00, 'Tidak pernah terlambat'),
-(7, 2, 4.00, 'Terlambat ≤ 2 kali/bulan'),
-(8, 2, 3.00, 'Terlambat 3–4 kali/bulan'),
-(9, 2, 2.00, 'Terlambat 5–6 kali/bulan'),
-(10, 2, 1.00, 'Terlambat > 6 kali/bulan'),
-(11, 3, 5.00, 'Nilai kinerja ≥ 90'),
-(12, 3, 4.00, 'Nilai kinerja 80–89'),
-(13, 3, 3.00, 'Nilai kinerja 70–79'),
-(14, 3, 2.00, 'Nilai kinerja 60–69'),
-(15, 3, 1.00, 'Nilai kinerja < 60'),
-(16, 4, 5.00, 'S2 atau lebih'),
-(17, 4, 4.00, 'S1'),
-(18, 4, 3.00, 'D3'),
-(19, 4, 2.00, 'SMA/SMK'),
-(20, 4, 1.00, 'SMP atau lebih rendah'),
-(21, 5, 5.00, 'Sangat baik'),
-(22, 5, 4.00, 'Baik'),
-(23, 5, 3.00, 'Cukup'),
-(24, 5, 2.00, 'Kurang'),
-(25, 5, 1.00, 'Sangat kurang');
+(1, 1, 5.00, 'sangat baik'),
+(2, 1, 4.00, 'baik'),
+(3, 1, 3.00, 'cukup'),
+(4, 1, 2.00, 'kurang baik'),
+(5, 1, 1.00, 'sangat kurang baik'),
+(6, 2, 5.00, 'sangat baik'),
+(7, 2, 4.00, 'baik'),
+(8, 2, 3.00, 'cukup'),
+(9, 2, 2.00, 'kurang baik'),
+(10, 2, 1.00, 'sangat kurang baik'),
+(11, 3, 5.00, 'sangat baik'),
+(12, 3, 4.00, 'baik'),
+(13, 3, 3.00, 'cukup'),
+(14, 3, 2.00, 'kurang baik'),
+(15, 3, 1.00, 'sangat kurang baik'),
+(16, 4, 5.00, 'sangat baik'),
+(17, 4, 4.00, 'baik'),
+(18, 4, 3.00, 'cukup'),
+(19, 4, 2.00, 'kurang baik'),
+(20, 4, 1.00, 'sangat kurang baik');
 
 -- --------------------------------------------------------
 

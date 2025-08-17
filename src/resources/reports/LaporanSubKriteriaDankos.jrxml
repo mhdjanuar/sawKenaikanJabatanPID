@@ -199,7 +199,7 @@ inner join saw_kenaikan_jabatan_pid.criteria as c on sc.id_kreteria = c.id]]>
 								<textElement textAlignment="Center">
 									<paragraph spacingBefore="10"/>
 								</textElement>
-								<text><![CDATA[DEKSRIPSI]]></text>
+								<text><![CDATA[DESKRIPSI]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">

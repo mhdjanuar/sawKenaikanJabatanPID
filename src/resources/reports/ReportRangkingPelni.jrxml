@@ -168,7 +168,7 @@ ORDER BY total_nilai DESC;]]>
 				<textElement textAlignment="Center">
 					<font size="20" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Laporan Rangking]]></text>
+				<text><![CDATA[Laporan Ranking]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -244,7 +244,7 @@ ORDER BY total_nilai DESC;]]>
 								<textElement textAlignment="Center">
 									<paragraph spacingBefore="10"/>
 								</textElement>
-								<text><![CDATA[Rangking]]></text>
+								<text><![CDATA[Ranking]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
