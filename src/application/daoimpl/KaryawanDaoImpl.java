@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package application.daoimpl;
 
 import application.dao.KaryawanDao;
@@ -42,6 +38,7 @@ public class KaryawanDaoImpl implements KaryawanDao {
             while (resultSet.next()) {
                 KaryawanModel listData = new KaryawanModel();
                 listData.setId(resultSet.getInt("id"));
+                listData.setNik(resultSet.getString("nik"));   // ✅ ambil nik
                 listData.setName(resultSet.getString("name"));
                 listData.setJabatan(resultSet.getString("position"));
 
@@ -56,17 +53,18 @@ public class KaryawanDaoImpl implements KaryawanDao {
         return listDataAll;
     }
 
-
     @Override
     public int create(KaryawanModel karyawan) {
         try {
-            query = "INSERT INTO employees(name, position) VALUES (?, ?)";
+            query = "INSERT INTO employees(nik, name, position) VALUES (?, ?, ?)";
             pstmt = dbConnection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            pstmt.setString(1, karyawan.getName());
-            pstmt.setString(2, karyawan.getJabatan());
+            pstmt.setString(1, karyawan.getNik());      // ✅ simpan nik
+            pstmt.setString(2, karyawan.getName());
+            pstmt.setString(3, karyawan.getJabatan());
 
             // Log sebelum insert
             System.out.println("=== Menyimpan Data Karyawan ===");
+            System.out.println("NIK : " + karyawan.getNik());
             System.out.println("Nama: " + karyawan.getName());
 
             int result = pstmt.executeUpdate();
@@ -87,6 +85,46 @@ public class KaryawanDaoImpl implements KaryawanDao {
         }
     }
 
+    @Override
+    public int update(KaryawanModel karyawan) {
+        int result = 0;
+        try {
+            // ✅ update termasuk nik
+            query = "UPDATE employees SET nik = ?, name = ?, position = ? WHERE id = ?";
+
+            pstmt = dbConnection.prepareStatement(query);
+            pstmt.setString(1, karyawan.getNik());
+            pstmt.setString(2, karyawan.getName());
+            pstmt.setString(3, karyawan.getJabatan());
+            pstmt.setInt(4, karyawan.getId());
+
+            result = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeStatement();
+        }
+
+        return result;
+    }
+
+    @Override
+    public int deleteKaryawan(int id) {
+        int result = 0;
+        try {
+            query = "DELETE FROM employees WHERE id = ?";
+            pstmt = dbConnection.prepareStatement(query);
+            pstmt.setInt(1, id);
+
+            result = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeStatement();
+        }
+
+        return result;
+    }
     
     private void closeStatement() {
         try {
@@ -102,46 +140,4 @@ public class KaryawanDaoImpl implements KaryawanDao {
             throw new RuntimeException(e);
         }
     }
-
-    @Override
-    public int update(KaryawanModel karyawan) {
-        int result = 0;
-        try {
-            // Query untuk mengupdate data karyawan
-            query = "UPDATE employees SET name = ?, position = ? WHERE id = ?";
-
-            pstmt = dbConnection.prepareStatement(query);
-            pstmt.setString(1, karyawan.getName());  // Nama karyawan
-            pstmt.setString(2, karyawan.getJabatan());  // Alamat karyawan
-            pstmt.setInt(3, karyawan.getId());  // ID karyawan yang akan diupdate
-
-            result = pstmt.executeUpdate();  // Eksekusi query update
-        } catch (SQLException e) {
-            // Jika ada error, lempar exception
-            e.printStackTrace();
-        } finally {
-            closeStatement();  // Pastikan koneksi ditutup
-        }
-
-        return result;  // Kembalikan jumlah baris yang terupdate
-    }
-
-    @Override
-    public int deleteKaryawan(int id) {
-        int result = 0;
-        try {
-            query = "DELETE FROM employees WHERE id = ?";
-            pstmt = dbConnection.prepareStatement(query);
-            pstmt.setInt(1, id);
-
-            result = pstmt.executeUpdate(); // eksekusi dan simpan jumlah baris yang terhapus
-        } catch (SQLException e) {
-            e.printStackTrace(); // log error
-        } finally {
-            closeStatement(); // tutup statement
-        }
-
-        return result; // return jumlah baris yang terhapus
-    }
-    
 }

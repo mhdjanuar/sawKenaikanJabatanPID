@@ -44,18 +44,29 @@ public class CriteriaView extends javax.swing.JFrame {
     
      public void getAllData() {
         List<CriteriaModel> criteriaList = criteriaDao.findAll();
-        
-        DefaultTableModel model = new DefaultTableModel();
-        model.setColumnIdentifiers(new Object[]{"Id", "Nama", "Type", "Bobot"}); // Adjust column names as needed
 
-        // Populate the model with data from spareparts
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(new Object[]{"No", "Id", "Nama", "Type", "Bobot"}); // tambahin kolom "No"
+
+        int no = 1;
         for (CriteriaModel criteria : criteriaList) {
-            model.addRow(new Object[]{criteria.getId(), criteria.getName(), criteria.getType(), criteria.getBobot()}); // Add more attributes as needed
+            model.addRow(new Object[]{
+                no++, // auto numbering
+                criteria.getId(),
+                criteria.getName(),
+                criteria.getType(),
+                criteria.getBobot()
+            });
         }
-        
-        // Set the table model to jTable1
+
         jTable1.setModel(model);
+
+        // Hide kolom Id
+        jTable1.getColumnModel().getColumn(1).setMinWidth(0);
+        jTable1.getColumnModel().getColumn(1).setMaxWidth(0);
+        jTable1.getColumnModel().getColumn(1).setWidth(0);
     }
+
     
     public CriteriaView() {
         initComponents();

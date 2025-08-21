@@ -223,9 +223,69 @@
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="154" splitType="Stretch">
+		<band height="164" splitType="Stretch">
+			<staticText>
+				<reportElement x="430" y="30" width="140" height="19" uuid="efe294c6-2e7c-4eeb-b687-f34c1ef88b00">
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+					<paragraph rightIndent="40"/>
+				</textElement>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="140" width="94" height="24" uuid="7d9e364a-26fa-413d-9bab-f3a56f64e0fd">
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="10"/>
+				</textElement>
+				<text><![CDATA[Mario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="30" width="140" height="19" uuid="08f12e48-1378-4dff-93b8-081977ce9c90">
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+					<paragraph rightIndent="40"/>
+				</textElement>
+				<text><![CDATA[Menyetujui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="140" width="94" height="24" uuid="e19a50d5-3eb2-4a24-a066-2c7150a122d6">
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="10"/>
+				</textElement>
+				<text><![CDATA[Andreas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="60" width="140" height="19" uuid="f92644d4-fb43-4fb2-861c-329d01e0c999">
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+					<paragraph rightIndent="40"/>
+				</textElement>
+				<text><![CDATA[Manager]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="60" width="140" height="19" uuid="59b7daad-18a3-4f60-ab53-e1ee6f4c4d26">
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+					<paragraph rightIndent="40"/>
+				</textElement>
+				<text><![CDATA[Administrasi]]></text>
+			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="-20" y="20" width="594" height="19" uuid="8cb9f943-9650-46e5-8035-a39e46cf3002">
+				<reportElement x="410" y="8" width="153" height="19" uuid="43a1e534-7a2d-4d96-9663-c30a8d11c123">
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
@@ -233,26 +293,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA["Jakarta, " + new java.text.SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id", "ID")).format(new java.util.Date())]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="460" y="50" width="124" height="19" uuid="f0ced513-a1fd-4151-989f-a5e088d9ace2">
-					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Center">
-					<font isBold="true"/>
-					<paragraph rightIndent="40"/>
-				</textElement>
-				<text><![CDATA[Kepala Cabang]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="470" y="130" width="67" height="24" uuid="0f33c143-b6c6-48b7-90cd-5a576099e461">
-					<property name="com.jaspersoft.studio.unit.spacingBefore" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Right">
-					<paragraph rightIndent="10"/>
-				</textElement>
-				<text><![CDATA[ Sri Mulyati]]></text>
-			</staticText>
 		</band>
 	</pageFooter>
 </jasperReport>
